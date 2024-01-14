@@ -1,1 +1,162 @@
+1. Write a program which will read temperature value in Fahrenheit scale and print the value in Celsius scale.
+
+Code: 
+
+import java.util.Scanner;
+public class FahrtoCel {
+  public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter temperature in Fahrenheit: ");
+        double fahrenheit = input.nextDouble();
+
+        double celsius = (fahrenheit - 32) * 5.0 / 9.0;
+
+        System.out.println(fahrenheit + "°F is equal to " + celsius + "°C");
+    }
+}
+
+
+2. Write a program to enter length and width of a rectangle and find area and perimeter of the rectangle.
+
+Code:
+
+import java.util.Scanner;
+public class RectangleAreaPerimeter {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the length of the rectangle: ");
+        double length = input.nextDouble();
+
+        System.out.print("Enter the width of the rectangle: ");
+        double width = input.nextDouble();
+
+        double area = length * width;
+        double perimeter = 2 * (length + width);
+
+        System.out.println("Area of the rectangle: " + area);
+        System.out.println("Perimeter of the rectangle: " + perimeter);
+    }
+}
+
+
+3. Write a program to enter marks of five subjects of a student and calculate total, average and percentage of all subjects.
+
+Code: 
+
+import java.util.Scanner;
+public class StudentMarks {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int totalMarks = 0;
+        double averageMarks = 0.0;
+        double percentage = 0.0;
+
+        
+        for (int i = 1; i <= 5; i++) {
+            System.out.print("Enter marks for subject " + i + ": ");
+            int marks = input.nextInt();
+            totalMarks += marks;
+        }
+
+        
+        averageMarks = (double) totalMarks / 5;
+        percentage = (averageMarks / 100) * 100;
+
+       
+        System.out.println("Total marks: " + totalMarks);
+        System.out.println("Average marks: " + averageMarks);
+        System.out.println("Percentage: " + percentage + "%");
+    }
+}
+
+
+4. Write four statements by using printf function to print an asterisk pattern having 1, 3,5 and 7 asterisks (*) in successive lines so that it generates a triangular pattern as given below.
+
+
+*
+* * *
+* * * * *
+* * * * * * *
+
+
+Code:
+
+System.out.printf("%s\n", "*");
+System.out.printf("%3s\n", "*");
+System.out.printf("%5s\n", "*");
+System.out.printf("%7s\n", "*");
+
+
+5. A ball is released from a height of Y meters. Each time it bounces on the floor, its velocity becomes halved. Write a program, which reads the value of Y and prints the total
+distance traversed by the ball when it touches the ground for the third time. Assume that the value of acceleration due to gravity, g, is 9.8.
+
+
+Code:
+
+
+import java.util.Scanner;
+public class BouncingBall {
+
+   public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+
+       System.out.print("Enter the initial height (Y meters): ");
+       double initialHeight = input.nextDouble();
+
+       double gravity = 9.8;  
+
+       double totalDistance = 0;
+       double currentHeight = initialHeight;
+
+       for (int i = 0; i < 3; i++) {
+           double bounceHeight = currentHeight / 2;
+
+           totalDistance += currentHeight + bounceHeight;
+
+           currentHeight = bounceHeight;
+       }
+
+       System.out.println("Total distance traversed: " + totalDistance + " meters");
+   }
+}
+
+
+
+6. Consider a bank that offers fixed deposit accounts with cumulative (annually) interest on the balance available in the account. Write a C program that reads the amount initially invested (called
+Principal amount) in an account and interest rate. The program generates the balance available in the account at the end of each year for first five years.
+
+
+Code:
+
+import java.util.Scanner;
+public class FixedDeposit {
+
+   public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+
+       int YEARS = 5; 
+
+       System.out.print("Enter principal amount: ");
+       double principalAmount = input.nextDouble();
+
+       System.out.print("Enter interest rate (in percentage): ");
+       double interestRate = input.nextDouble();
+       interestRate /= 100; 
+
+       System.out.println("\nYear-end balances:");
+       for (int year = 1; year <= YEARS; year++) {
+           double interestEarned = principalAmount * interestRate;
+           principalAmount += interestEarned;
+           System.out.printf("Year %d: Balance = $%.2f\n", year, principalAmount);
+       }
+   }
+}
+
+
+
 
